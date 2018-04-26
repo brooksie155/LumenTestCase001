@@ -21,7 +21,7 @@ $router->get('/guestbook/', [
 ]);
 
 
-$router->get('/guestbook/add/', [
+$router->post('/guestbook/add/', [
     'as' => 'guestbook_add',
     'uses' => 'GuestBook@addEntryAction'
 ]);

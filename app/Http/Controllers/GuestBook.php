@@ -14,24 +14,7 @@ use App\Models\GuestBook as GuestBookModel;
  * @author brooksie
  */
 class GuestBook 
-{
-    private $model;
- 
-    private $whereColumnConditions = [];
-    
-    /**
-     * Get model for quest book
-     * @return type
-     */
-    private function getModel()
-    {
-        if (is_null($this->model)) {
-            $this->model = new GuestBookModel();
-        }
-        
-        return $this->model;
-    }
-    
+{ 
     /**
      * List action, invokes list request on an eloquent model with ordering, 
      * paging parameters
@@ -49,16 +32,11 @@ class GuestBook
     }     
     
     /**
-     * Retrieve row for specified id
+     * Add record
      * 
-     * @param type $id
-     * @return type
+     * @param Request $request
+     * @return IlluminateResponse
      */
-    public function indexAction() : IlluminateResponse
-    {
-        return Response('test 123');
-    }
-    
     public function addEntryAction(Request $request) : IlluminateResponse
     {
         $fieldMeta = [
